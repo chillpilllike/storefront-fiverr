@@ -1,0 +1,58 @@
+query CollectionList {
+	heroImages: products(first: 3, channel: "default-channel") {
+		edges {
+			node {
+				id
+				name
+				slug
+				thumbnail {
+					url
+					alt
+				}
+				media {
+					url
+					alt
+				}
+			}
+		}
+	}
+	collections(first: 3, channel: "default-channel") {
+		edges {
+			node {
+				id
+				name
+				slug
+				products(first: 6) {
+					edges {
+						node {
+							id
+							name
+							slug
+							thumbnail {
+								url
+								alt
+							}
+							pricing {
+								priceRange {
+									start {
+										gross {
+											amount
+											currency
+										}
+									}
+
+									stop {
+										gross {
+											amount
+											currency
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
