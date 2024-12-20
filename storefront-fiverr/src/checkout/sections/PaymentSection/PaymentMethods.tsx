@@ -17,7 +17,7 @@ export const PaymentMethods = () => {
 
   // Find only the Stripe gateway
   const stripeGateway = availablePaymentGateways.find(
-    (gateway) => gateway.id === "saleor.payments.stripe"
+    (gateway) => gateway.id === "app.saleor.stripe"
   );
 
   // If Stripe gateway is not available, handle it gracefully
